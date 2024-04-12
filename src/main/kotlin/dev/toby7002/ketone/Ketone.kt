@@ -10,7 +10,6 @@ import net.minecraft.world.item.CreativeModeTabs
 import net.neoforged.bus.api.IEventBus
 import net.neoforged.fml.common.Mod
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent
-import net.neoforged.neoforge.common.NeoForge
 import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
 
@@ -29,9 +28,14 @@ class Ketone(modEventBus: IEventBus) {
                 CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.$MOD_ID"))
                     .withTabsBefore(CreativeModeTabs.COMBAT)
-                    .icon { Items.GLASS_CUTTER.get().defaultInstance }
+                    .icon { KItems.GLASS_CUTTER.get().defaultInstance }
                     .displayItems { _: ItemDisplayParameters?, output: CreativeModeTab.Output ->
-                        output.accept(Items.GLASS_CUTTER.get())
+                        ITEMS.entries
+                            .map { it.get() }
+                            .forEach(output::accept)
+                        BLOCKS.entries
+                            .map { it.get() }
+                            .forEach(output::accept)
                     }.build()
             }
     }
@@ -42,6 +46,7 @@ class Ketone(modEventBus: IEventBus) {
         BLOCKS.register(modEventBus)
         ITEMS.register(modEventBus)
         CREATIVE_MODE_TABS.register(modEventBus)
+        KItems.registerItems()
     }
 
     private fun commonSetup(event: FMLCommonSetupEvent) {

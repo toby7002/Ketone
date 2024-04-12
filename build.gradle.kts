@@ -22,6 +22,18 @@ repositories {
         name = "Kotlin for Forge"
         setUrl("https://thedarkcolour.github.io/KotlinForForge/")
     }
+    maven { setUrl("https://maven.shedaniel.me") }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                setUrl("https://api.modrinth.com/maven")
+            }
+        }
+        filter {
+            includeGroup("maven.modrinth")
+        }
+    }
 }
 
 base {
@@ -69,9 +81,14 @@ sourceSets {
 dependencies {
     val neo_version: String by project
     val kff_version: String by project
+    val rei_version: String by project
+    val jade_version: String by project
 
     implementation("net.neoforged:neoforge:$neo_version")
     implementation("thedarkcolour:kotlinforforge-neoforge:$kff_version")
+
+    runtimeOnly("me.shedaniel:RoughlyEnoughItems-neoforge:$rei_version")
+    runtimeOnly("maven.modrinth:nvQzSEkH:$jade_version")
 }
 
 tasks.withType<ProcessResources>().configureEach {

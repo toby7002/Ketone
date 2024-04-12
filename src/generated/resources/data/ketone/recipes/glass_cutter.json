@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": {
+      "item": "ketone:polished_quartz"
+    },
+    "y": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "x",
+    "y"
+  ],
+  "result": {
+    "item": "ketone:glass_cutter"
+  }
+}
