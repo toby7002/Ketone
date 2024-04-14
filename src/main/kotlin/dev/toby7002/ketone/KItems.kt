@@ -13,7 +13,7 @@ class KItems {
             "glass_cutter", Supplier{ GlassCutter()}
         )
 
-        fun registerItems() {}
+        fun init() {}
     }
 
 }

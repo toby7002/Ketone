@@ -24,6 +24,14 @@ repositories {
         setUrl("https://thedarkcolour.github.io/KotlinForForge/")
     }
     maven { setUrl("https://maven.shedaniel.me") }
+    maven {
+        name = "GeckoLib"
+        setUrl("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
+        content {
+            includeGroupByRegex("software\\.bernie.*")
+            includeGroup("com.eliotlash.mclib")
+        }
+    }
     exclusiveContent {
         forRepository {
             maven {
@@ -80,13 +88,16 @@ sourceSets {
 
 
 dependencies {
+    val minecraft_version: String by project
     val neo_version: String by project
     val kff_version: String by project
     val rei_version: String by project
     val jade_version: String by project
+    val geckolib_version: String by project
 
     implementation("net.neoforged:neoforge:$neo_version")
     implementation("thedarkcolour:kotlinforforge-neoforge:$kff_version")
+    implementation("software.bernie.geckolib:geckolib-neoforge-$minecraft_version:$geckolib_version")
 
     runtimeOnly("me.shedaniel:RoughlyEnoughItems-neoforge:$rei_version")
     runtimeOnly("maven.modrinth:nvQzSEkH:$jade_version")

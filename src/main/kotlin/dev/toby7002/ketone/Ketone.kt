@@ -2,16 +2,21 @@ package dev.toby7002.ketone
 
 import com.mojang.logging.LogUtils
 import dev.toby7002.ketone.datagen.DataGen
+import dev.toby7002.ketone.blocks.entity.KBlockEntities
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.chat.Component
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.CreativeModeTab.ItemDisplayParameters
 import net.minecraft.world.item.CreativeModeTabs
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.neoforged.bus.api.IEventBus
 import net.neoforged.fml.common.Mod
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent
 import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
+import net.neoforged.neoforge.registries.NeoForgeRegistries
+import software.bernie.geckolib.GeckoLib
 
 @Mod(Ketone.MOD_ID)
 class Ketone(modEventBus: IEventBus) {
@@ -20,6 +25,7 @@ class Ketone(modEventBus: IEventBus) {
         val LOGGER = LogUtils.getLogger()
         val BLOCKS: DeferredRegister.Blocks = DeferredRegister.createBlocks(MOD_ID)
         val ITEMS: DeferredRegister.Items = DeferredRegister.createItems(MOD_ID)
+        val BLOCK_ENTITIES: DeferredRegister<BlockEntityType<*>> = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MOD_ID)
         val CREATIVE_MODE_TABS: DeferredRegister<CreativeModeTab> =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID)
 
@@ -43,10 +49,14 @@ class Ketone(modEventBus: IEventBus) {
     init {
         modEventBus.addListener(this::commonSetup)
         modEventBus.addListener(DataGen::gatherData)
+        GeckoLib.initialize(modEventBus)
         BLOCKS.register(modEventBus)
         ITEMS.register(modEventBus)
         CREATIVE_MODE_TABS.register(modEventBus)
-        KItems.registerItems()
+        BLOCK_ENTITIES.register(modEventBus)
+        KItems.init()
+        KBlocks.init()
+        KBlockEntities.init()
     }
 
     private fun commonSetup(event: FMLCommonSetupEvent) {
