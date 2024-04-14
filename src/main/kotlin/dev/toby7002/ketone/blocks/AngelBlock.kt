@@ -23,6 +23,10 @@ class AngelBlock() : Block(Properties.of()), EntityBlock {
         return AngelBlockEntity(p0, p1)
     }
 
+    override fun getRenderShape(pState: BlockState): RenderShape {
+        return RenderShape.ENTITYBLOCK_ANIMATED
+    }
+
     override fun onDestroyedByPlayer(
         state: BlockState,
         level: Level,

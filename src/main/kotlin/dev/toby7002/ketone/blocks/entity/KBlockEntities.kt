@@ -9,7 +9,7 @@ import java.util.function.Supplier
 
 class KBlockEntities {
     companion object {
-        val ANGEL_BLOCK_ENTITY: DeferredHolder<BlockEntityType<*>, BlockEntityType<*>> = Ketone.BLOCK_ENTITIES.register(AngelBlock.NAME) { ->
+        val ANGEL_BLOCK_ENTITY: DeferredHolder<BlockEntityType<*>, BlockEntityType<AngelBlockEntity>> = Ketone.BLOCK_ENTITIES.register(AngelBlock.NAME) { ->
             BlockEntityType.Builder.of(::AngelBlockEntity, KBlocks.ANGEL_BLOCK.get()).build(null)
         }
 
