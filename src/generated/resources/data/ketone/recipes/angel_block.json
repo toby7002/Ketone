@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:feather"
+    },
+    "y": {
+      "item": "minecraft:white_wool"
+    },
+    "z": {
+      "item": "minecraft:gold_block"
+    }
+  },
+  "pattern": [
+    " y ",
+    "aza",
+    " y "
+  ],
+  "result": {
+    "item": "ketone:angel_block"
+  }
+}

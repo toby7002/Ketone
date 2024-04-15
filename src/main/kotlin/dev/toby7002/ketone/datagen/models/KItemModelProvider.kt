@@ -6,12 +6,10 @@ import net.minecraft.data.PackOutput
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider
 import net.neoforged.neoforge.common.data.ExistingFileHelper
 
-class KItemModelProvider(output: PackOutput,
-                         existingFileHelper: ExistingFileHelper
-) : ItemModelProvider(output, Ketone.MOD_ID, existingFileHelper) {
+class KItemModelProvider(output: PackOutput, existingFileHelper: ExistingFileHelper) :
+    ItemModelProvider(output, Ketone.MOD_ID, existingFileHelper) {
     override fun registerModels() {
         basicItem(KItems.GLASS_CUTTER.get())
         basicItem(KItems.POLISHED_QUARTZ.get())
     }
-
 }

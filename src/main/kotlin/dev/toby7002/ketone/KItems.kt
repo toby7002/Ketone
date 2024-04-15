@@ -7,13 +7,13 @@ import net.neoforged.neoforge.registries.DeferredItem
 
 class KItems {
     companion object {
-        val POLISHED_QUARTZ: DeferredItem<Item> = Ketone.ITEMS.registerSimpleItem("polished_quartz",
-        )
-        val GLASS_CUTTER: DeferredItem<Item> = Ketone.ITEMS.register(
-            "glass_cutter", Supplier{ GlassCutter()}
-        )
+        val POLISHED_QUARTZ: DeferredItem<Item> =
+            Ketone.ITEMS.registerSimpleItem(
+                "polished_quartz",
+            )
+        val GLASS_CUTTER: DeferredItem<Item> =
+            Ketone.ITEMS.register("glass_cutter", Supplier { GlassCutter() })
 
         fun init() {}
     }
-
 }

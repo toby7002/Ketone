@@ -13,11 +13,8 @@ import software.bernie.geckolib.core.`object`.PlayState
 import software.bernie.geckolib.util.GeckoLibUtil
 import software.bernie.geckolib.util.RenderUtils
 
-
-class AngelBlockEntity(pPos: BlockPos, pBlockState: BlockState) : BlockEntity(
-    KBlockEntities.ANGEL_BLOCK_ENTITY.get(), pPos,
-    pBlockState
-), GeoBlockEntity {
+class AngelBlockEntity(pPos: BlockPos, pBlockState: BlockState) :
+    BlockEntity(KBlockEntities.ANGEL_BLOCK_ENTITY.get(), pPos, pBlockState), GeoBlockEntity {
     companion object {
         val IDLE: RawAnimation = RawAnimation.begin().thenLoop("animation.angel_block.idle")
     }
@@ -25,7 +22,7 @@ class AngelBlockEntity(pPos: BlockPos, pBlockState: BlockState) : BlockEntity(
     private val cache: AnimatableInstanceCache = GeckoLibUtil.createInstanceCache(this)
 
     override fun registerControllers(p0: AnimatableManager.ControllerRegistrar) {
-       p0.add(AnimationController(this, this::idleAnimationController))
+        p0.add(AnimationController(this, this::idleAnimationController))
     }
 
     private fun idleAnimationController(state: AnimationState<AngelBlockEntity>): PlayState {

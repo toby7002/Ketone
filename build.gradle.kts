@@ -1,4 +1,4 @@
-import java.util.Properties
+import java.util.*
 
 plugins {
     id("java-library")
@@ -8,6 +8,7 @@ plugins {
     id("net.neoforged.gradle.userdev") version "7.0.97"
     kotlin("jvm") version "1.9.23"
     kotlin("plugin.serialization") version "1.9.23"
+    id("com.diffplug.spotless") version "6.25.0"
 }
 
 val mod_version: String by project
@@ -15,6 +16,7 @@ val mod_group_id: String by project
 val mod_id: String by project
 
 project.version = mod_version
+
 project.group = mod_group_id
 
 repositories {
@@ -39,20 +41,18 @@ repositories {
                 setUrl("https://api.modrinth.com/maven")
             }
         }
-        filter {
-            includeGroup("maven.modrinth")
-        }
+        filter { includeGroup("maven.modrinth") }
     }
 }
 
-base {
-    archivesName.set(mod_id)
-}
+base { archivesName.set(mod_id) }
 
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 
-//minecraft.accessTransformers.file rootProject.file("src/main/resources/META-INF/accesstransformer.cfg")
-//minecraft.accessTransformers.entry public net.minecraft.client.Minecraft textureManager # textureManager
+// minecraft.accessTransformers.file
+// rootProject.file("src/main/resources/META-INF/accesstransformer.cfg")
+// minecraft.accessTransformers.entry public net.minecraft.client.Minecraft textureManager #
+// textureManager
 
 runs {
     configureEach {
@@ -62,30 +62,31 @@ runs {
         modSource(project.sourceSets.getByName("main"))
     }
 
-    register("client") {
-        systemProperty("forge.enabledGameTestNamespaces", mod_id)
-    }
+    register("client") { systemProperty("forge.enabledGameTestNamespaces", mod_id) }
 
     register("server") {
         systemProperty("forge.enabledGameTestNamespaces", mod_id)
         programArgument("--nogui")
     }
 
-    register("gameTestServer") {
-        systemProperty("forge.enabledGameTestNamespaces", mod_id)
-    }
+    register("gameTestServer") { systemProperty("forge.enabledGameTestNamespaces", mod_id) }
 
     register("data") {
-        programArguments.addAll(listOf("--mod", mod_id, "--all", "--output", file("src/generated/resources/").absolutePath, "--existing", file("src/main/resources/").absolutePath))
+        programArguments.addAll(
+            listOf(
+                "--mod",
+                mod_id,
+                "--all",
+                "--output",
+                file("src/generated/resources/").absolutePath,
+                "--existing",
+                file("src/main/resources/").absolutePath
+            )
+        )
     }
 }
 
-sourceSets {
-    main {
-        resources.srcDir("src/generated/resources")
-    }
-}
-
+sourceSets { main { resources.srcDir("src/generated/resources") } }
 
 dependencies {
     val minecraft_version: String by project
@@ -97,16 +98,19 @@ dependencies {
 
     implementation("net.neoforged:neoforge:$neo_version")
     implementation("thedarkcolour:kotlinforforge-neoforge:$kff_version")
-    implementation("software.bernie.geckolib:geckolib-neoforge-$minecraft_version:$geckolib_version")
+    implementation(
+        "software.bernie.geckolib:geckolib-neoforge-$minecraft_version:$geckolib_version"
+    )
 
     runtimeOnly("me.shedaniel:RoughlyEnoughItems-neoforge:$rei_version")
     runtimeOnly("maven.modrinth:nvQzSEkH:$jade_version")
 }
 
 tasks.withType<ProcessResources>().configureEach {
-    val loadedProperties = Properties().apply {
-        load(project.rootProject.file("gradle.properties").inputStream())
-    }.toMutableMap() as MutableMap<String, Any>
+    val loadedProperties =
+        Properties()
+            .apply { load(project.rootProject.file("gradle.properties").inputStream()) }
+            .toMutableMap() as MutableMap<String, Any>
 
     inputs.properties(loadedProperties)
 
@@ -117,16 +121,22 @@ tasks.withType<ProcessResources>().configureEach {
 }
 
 publishing {
-    publications {
-        create<MavenPublication>("mavenJava") {
-            from(components["java"])
-        }
-    }
-    repositories {
-        maven(url = "file://${project.projectDir}/repo")
-    }
+    publications { create<MavenPublication>("mavenJava") { from(components["java"]) } }
+    repositories { maven(url = "file://${project.projectDir}/repo") }
 }
 
-tasks.withType<JavaCompile> {
-    options.encoding = "UTF-8"
+tasks.withType<JavaCompile> { options.encoding = "UTF-8" }
+
+spotless {
+    kotlin { ktfmt().kotlinlangStyle() }
+    kotlinGradle {
+        target("*.gradle.kts")
+        ktfmt().kotlinlangStyle()
+    }
+    format("dotfiles") {
+        target(".gitignore", ".gitattributes", ".editorconfig")
+        indentWithSpaces(2)
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
 }

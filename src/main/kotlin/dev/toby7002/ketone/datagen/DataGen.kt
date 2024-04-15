@@ -6,7 +6,6 @@ import dev.toby7002.ketone.datagen.models.KItemModelProvider
 import dev.toby7002.ketone.datagen.recipes.RecipesProvider
 import net.neoforged.neoforge.data.event.GatherDataEvent
 
-
 class DataGen {
     companion object {
 

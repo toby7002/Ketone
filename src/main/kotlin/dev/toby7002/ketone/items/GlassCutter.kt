@@ -9,15 +9,23 @@ import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.level.block.state.BlockState
 import net.neoforged.neoforge.common.Tags
 
-class GlassCutter: Item(Properties()), Tier {
+class GlassCutter : Item(Properties()), Tier {
     override fun useOn(pContext: UseOnContext): InteractionResult {
         val level = pContext.level
         val pos = pContext.clickedPos
         val blockState = level.getBlockState(pos)
 
-        if(blockState.`is`(Tags.Blocks.GLASS)) {
+        if (blockState.`is`(Tags.Blocks.GLASS)) {
             level.destroyBlock(pos, true)
-            level.addFreshEntity(ItemEntity(level, pos.x.toDouble(), pos.y.toDouble(), pos.z.toDouble(), blockState.block.asItem().defaultInstance))
+            level.addFreshEntity(
+                ItemEntity(
+                    level,
+                    pos.x.toDouble(),
+                    pos.y.toDouble(),
+                    pos.z.toDouble(),
+                    blockState.block.asItem().defaultInstance
+                )
+            )
             return InteractionResult.SUCCESS
         }
 
@@ -41,7 +49,7 @@ class GlassCutter: Item(Properties()), Tier {
     }
 
     override fun getDestroySpeed(pStack: ItemStack, pState: BlockState): Float {
-        return 0f;
+        return 0f
     }
 
     override fun getRepairIngredient(): Ingredient {
