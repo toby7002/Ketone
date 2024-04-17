@@ -26,6 +26,12 @@ repositories {
         setUrl("https://thedarkcolour.github.io/KotlinForForge/")
     }
     maven { setUrl("https://maven.shedaniel.me") }
+    maven {
+        setUrl("https://dl.cloudsmith.io/public/klikli-dev/mods/maven/")
+        content {
+            includeGroup("com.klikli_dev")
+        }
+    }
     exclusiveContent {
         forRepository {
             maven {
@@ -86,9 +92,14 @@ dependencies {
     val kff_version: String by project
     val rei_version: String by project
     val jade_version: String by project
+    val modonomicon_version: String by project
 
     implementation("net.neoforged:neoforge:$neo_version")
     implementation("thedarkcolour:kotlinforforge-neoforge:$kff_version")
+    implementation("com.klikli_dev:modonomicon-${minecraft_version}-neoforge:${modonomicon_version}") {
+        isTransitive =
+            false
+    }
 
     runtimeOnly("me.shedaniel:RoughlyEnoughItems-neoforge:$rei_version")
     runtimeOnly("maven.modrinth:nvQzSEkH:$jade_version")
