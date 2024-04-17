@@ -21,6 +21,13 @@ class RecipesProvider(output: PackOutput) : RecipeProvider(output) {
             .define("y".single(), Items.STICK)
             .unlockedBy("has_item", has(KItems.POLISHED_QUARTZ.get()))
             .save(p0)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, KItems.ICE_BREAKER, 1)
+            .pattern("x")
+            .pattern("y")
+            .define("x".single(), KItems.POLISHED_QUARTZ.get())
+            .define("y".single(), Items.TORCH)
+            .unlockedBy("has_item", has(KItems.POLISHED_QUARTZ.get()))
+            .save(p0)
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, KBlocks.ANGEL_BLOCK, 1)
             .pattern(" y ")

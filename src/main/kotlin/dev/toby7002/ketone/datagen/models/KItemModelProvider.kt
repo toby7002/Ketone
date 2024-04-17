@@ -11,5 +11,6 @@ class KItemModelProvider(output: PackOutput, existingFileHelper: ExistingFileHel
     override fun registerModels() {
         basicItem(KItems.GLASS_CUTTER.get())
         basicItem(KItems.POLISHED_QUARTZ.get())
+        basicItem(KItems.ICE_BREAKER.get())
     }
 }

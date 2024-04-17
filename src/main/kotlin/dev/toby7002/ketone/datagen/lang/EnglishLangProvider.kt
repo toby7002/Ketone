@@ -12,5 +12,6 @@ class EnglishLangProvider(output: PackOutput) : LanguageProvider(output, Ketone.
         add(KItems.GLASS_CUTTER.get(), "Glass Cutter")
         add(KItems.POLISHED_QUARTZ.get(), "Polished Quartz")
         add(KBlocks.ANGEL_BLOCK.get(), "Angel Block")
+        add(KItems.ICE_BREAKER.get(), "Ice Breaker")
     }
 }
