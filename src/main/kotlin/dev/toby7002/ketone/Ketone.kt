@@ -1,7 +1,6 @@
 package dev.toby7002.ketone
 
 import com.mojang.logging.LogUtils
-import dev.toby7002.ketone.blocks.entity.KBlockEntities
 import dev.toby7002.ketone.datagen.DataGen
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.chat.Component
@@ -14,7 +13,6 @@ import net.neoforged.fml.common.Mod
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent
 import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
-import software.bernie.geckolib.GeckoLib
 
 @Mod(Ketone.MOD_ID)
 class Ketone(modEventBus: IEventBus) {
@@ -45,14 +43,12 @@ class Ketone(modEventBus: IEventBus) {
     init {
         modEventBus.addListener(this::commonSetup)
         modEventBus.addListener(DataGen::gatherData)
-        GeckoLib.initialize(modEventBus)
         BLOCKS.register(modEventBus)
         ITEMS.register(modEventBus)
         CREATIVE_MODE_TABS.register(modEventBus)
         BLOCK_ENTITIES.register(modEventBus)
         KItems.init()
         KBlocks.init()
-        KBlockEntities.init()
     }
 
     private fun commonSetup(event: FMLCommonSetupEvent) {
