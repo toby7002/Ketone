@@ -14,6 +14,7 @@ plugins {
 val mod_version: String by project
 val mod_group_id: String by project
 val mod_id: String by project
+val minecraft_version: String by project
 
 project.version = mod_version
 
@@ -28,9 +29,7 @@ repositories {
     maven { setUrl("https://maven.shedaniel.me") }
     maven {
         setUrl("https://dl.cloudsmith.io/public/klikli-dev/mods/maven/")
-        content {
-            includeGroup("com.klikli_dev")
-        }
+        content { includeGroup("com.klikli_dev") }
     }
     exclusiveContent {
         forRepository {
@@ -43,7 +42,7 @@ repositories {
     }
 }
 
-base { archivesName.set(mod_id) }
+base { archivesName.set("$mod_id-neoforge-$minecraft_version") }
 
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 
@@ -87,7 +86,6 @@ runs {
 sourceSets { main { resources.srcDir("src/generated/resources") } }
 
 dependencies {
-    val minecraft_version: String by project
     val neo_version: String by project
     val kff_version: String by project
     val rei_version: String by project
@@ -96,9 +94,10 @@ dependencies {
 
     implementation("net.neoforged:neoforge:$neo_version")
     implementation("thedarkcolour:kotlinforforge-neoforge:$kff_version")
-    implementation("com.klikli_dev:modonomicon-${minecraft_version}-neoforge:${modonomicon_version}") {
-        isTransitive =
-            false
+    implementation(
+        "com.klikli_dev:modonomicon-${minecraft_version}-neoforge:${modonomicon_version}"
+    ) {
+        isTransitive = false
     }
 
     runtimeOnly("me.shedaniel:RoughlyEnoughItems-neoforge:$rei_version")
