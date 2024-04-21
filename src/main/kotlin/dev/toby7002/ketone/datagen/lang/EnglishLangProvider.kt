@@ -8,7 +8,7 @@ import net.neoforged.neoforge.common.data.LanguageProvider
 
 class EnglishLangProvider(output: PackOutput) : LanguageProvider(output, Ketone.MOD_ID, "en_us") {
     override fun addTranslations() {
-        add("itemGroup.ketone", "Ketone")
+        add(Ketone.KETONE_TAB.id.toString().replace(":", "."), "Ketone")
         add(KItems.GLASS_CUTTER.get(), "Glass Cutter")
         add(KItems.POLISHED_QUARTZ.get(), "Polished Quartz")
         add(KBlocks.ANGEL_BLOCK.get(), "Angel Block")

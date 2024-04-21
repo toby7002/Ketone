@@ -10,6 +10,10 @@ import net.minecraft.world.level.block.state.BlockState
 import net.neoforged.neoforge.common.Tags
 
 class GlassCutter : Item(Properties()), Tier {
+    companion object {
+        const val NAME: String = "glass_cutter"
+    }
+
     override fun useOn(pContext: UseOnContext): InteractionResult {
         val level = pContext.level
         val pos = pContext.clickedPos

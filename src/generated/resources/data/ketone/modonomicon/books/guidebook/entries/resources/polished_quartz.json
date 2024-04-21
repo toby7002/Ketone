@@ -1,0 +1,38 @@
+{
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "category": "ketone:resources",
+  "description": "book.ketone.guidebook.resources.polished_quartz.description",
+  "hide_while_locked": false,
+  "icon": {
+    "item": "ketone:polished_quartz"
+  },
+  "name": "book.ketone.guidebook.resources.polished_quartz.name",
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "show_title_separator": true,
+      "text": "book.ketone.guidebook.resources.polished_quartz.intro.text",
+      "title": "book.ketone.guidebook.resources.polished_quartz.intro.title",
+      "use_markdown_in_title": false
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "recipe_id_1": "ketone:polished_quartz",
+      "text": "",
+      "title1": "book.ketone.guidebook.resources.polished_quartz.recipe.title",
+      "title2": ""
+    }
+  ],
+  "show_when_any_parent_unlocked": false,
+  "x": -10,
+  "y": 0
+}

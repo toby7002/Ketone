@@ -32,7 +32,7 @@ class Ketone(modEventBus: IEventBus) {
                     .title(Component.translatable("itemGroup.$MOD_ID"))
                     .withTabsBefore(CreativeModeTabs.COMBAT)
                     .icon { KItems.GLASS_CUTTER.get().defaultInstance }
-                    .displayItems { _: ItemDisplayParameters?, output: CreativeModeTab.Output ->
+                    .displayItems { _: ItemDisplayParameters, output: CreativeModeTab.Output ->
                         ITEMS.entries.map { it.get() }.forEach(output::accept)
                         BLOCKS.entries.map { it.get() }.forEach(output::accept)
                     }

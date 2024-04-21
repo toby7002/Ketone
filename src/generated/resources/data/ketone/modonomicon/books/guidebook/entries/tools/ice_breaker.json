@@ -1,0 +1,38 @@
+{
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "category": "ketone:tools",
+  "description": "book.ketone.guidebook.tools.ice_breaker.description",
+  "hide_while_locked": false,
+  "icon": {
+    "item": "ketone:ice_breaker"
+  },
+  "name": "book.ketone.guidebook.tools.ice_breaker.name",
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "show_title_separator": true,
+      "text": "book.ketone.guidebook.tools.ice_breaker.intro.text",
+      "title": "book.ketone.guidebook.tools.ice_breaker.intro.title",
+      "use_markdown_in_title": false
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "anchor": "",
+      "condition": {
+        "type": "modonomicon:none"
+      },
+      "recipe_id_1": "ketone:ice_breaker",
+      "text": "",
+      "title1": "book.ketone.guidebook.tools.ice_breaker.recipe.title",
+      "title2": ""
+    }
+  ],
+  "show_when_any_parent_unlocked": false,
+  "x": -10,
+  "y": 0
+}
