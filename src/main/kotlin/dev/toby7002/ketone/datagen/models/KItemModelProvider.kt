@@ -13,5 +13,7 @@ class KItemModelProvider(output: PackOutput, existingFileHelper: ExistingFileHel
         basicItem(KItems.POLISHED_QUARTZ.get())
         basicItem(KItems.ICE_BREAKER.get())
         basicItem(KItems.GUIDEBOOK.get())
+        basicItem(KItems.TINY_COAL.get())
+        basicItem(KItems.TINY_CHARCOAL.get())
     }
 }

@@ -19,6 +19,10 @@ class KItems {
             Ketone.ITEMS.register(IceBreaker.NAME, Supplier { IceBreaker() })
         val GUIDEBOOK: DeferredItem<Item> =
             Ketone.ITEMS.register(Guidebook.NAME, Supplier { Guidebook() })
+        val TINY_COAL: DeferredItem<Item> =
+            Ketone.ITEMS.register(TinyCoal.NAME, Supplier { TinyCoal() })
+        val TINY_CHARCOAL: DeferredItem<Item> =
+            Ketone.ITEMS.register(TinyCharcoal.NAME, Supplier { TinyCharcoal() })
 
         fun init() {}
     }
