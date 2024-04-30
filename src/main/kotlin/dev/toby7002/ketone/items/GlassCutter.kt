@@ -10,6 +10,7 @@ import net.neoforged.neoforge.common.Tags
 class GlassCutter : Item(Properties()) {
     companion object {
         const val NAME: String = "glass_cutter"
+        const val DISPLAY_NAME = "Glass Cutter"
     }
 
     override fun useOn(pContext: UseOnContext): InteractionResult {

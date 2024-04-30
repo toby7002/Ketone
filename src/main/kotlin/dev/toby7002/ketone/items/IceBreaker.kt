@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockState
 class IceBreaker : Item(Properties()) {
     companion object {
         const val NAME: String = "ice_breaker"
+        const val DISPLAY_NAME = "Ice Breaker"
     }
 
     override fun useOn(pContext: UseOnContext): InteractionResult {

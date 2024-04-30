@@ -11,8 +11,8 @@ import dev.toby7002.ketone.items.PolishedQuartz
 import net.minecraft.world.level.ItemLike
 
 class PolishedQuartzEntry(parent: CategoryProvider) : EntryProvider(parent) {
-    private val ID = "polished_quartz"
-    private val NAME = "Polished Quartz"
+    private val ID = PolishedQuartz.NAME
+    private val NAME = PolishedQuartz.DISPLAY_NAME
     private val SHORT_DESCRIPTION = "Quartz but polished"
     private val LONG_DESCRIPTION = "This is used to make tools that involve sharpness"
     private val ITEM: ItemLike = KItems.POLISHED_QUARTZ.get()

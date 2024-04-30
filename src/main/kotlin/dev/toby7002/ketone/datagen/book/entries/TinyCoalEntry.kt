@@ -12,7 +12,7 @@ import net.minecraft.world.level.ItemLike
 
 class TinyCoalEntry(parent: CategoryProvider) : EntryProvider(parent) {
     private val ID = TinyCoal.NAME
-    private val NAME = "Tiny Coal"
+    private val NAME = TinyCoal.DISPLAY_NAME
     private val SHORT_DESCRIPTION = "Small coal"
     private val LONG_DESCRIPTION = "Provides just single operation in furnaces"
     private val ITEM: ItemLike = KItems.TINY_COAL

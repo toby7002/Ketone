@@ -11,8 +11,8 @@ import dev.toby7002.ketone.items.IceBreaker
 import net.minecraft.world.level.ItemLike
 
 class IceBreakerEntry(parent: CategoryProvider) : EntryProvider(parent) {
-    private val ID = "ice_breaker"
-    private val NAME = "Ice Breaker"
+    private val ID = IceBreaker.NAME
+    private val NAME = IceBreaker.DISPLAY_NAME
     private val SHORT_DESCRIPTION = "Quartz but polished"
     private val LONG_DESCRIPTION = "This is used to make tools that involve sharpness"
     private val ITEM: ItemLike = KItems.ICE_BREAKER.get()

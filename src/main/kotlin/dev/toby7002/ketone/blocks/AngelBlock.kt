@@ -10,6 +10,7 @@ import net.minecraft.world.level.material.FluidState
 class AngelBlock() : Block(Properties.of()) {
     companion object {
         const val NAME: String = "angel_block"
+        const val DISPLAY_NAME = "Angel Block"
     }
 
     override fun onDestroyedByPlayer(

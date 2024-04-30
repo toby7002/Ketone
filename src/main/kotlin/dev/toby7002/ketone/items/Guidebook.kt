@@ -19,6 +19,8 @@ import net.minecraft.world.level.Level
 class Guidebook : ModonomiconItem(Properties()) {
     companion object {
         const val NAME: String = "guidebook"
+        const val DISPLAY_NAME = "Guidebook"
+
         val BOOK = ResourceLocation(Ketone.MOD_ID, NAME)
     }
 

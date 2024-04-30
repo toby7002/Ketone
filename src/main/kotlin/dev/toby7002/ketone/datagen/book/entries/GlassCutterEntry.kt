@@ -11,8 +11,8 @@ import dev.toby7002.ketone.items.GlassCutter
 import net.minecraft.world.level.ItemLike
 
 class GlassCutterEntry(parent: CategoryProvider) : EntryProvider(parent) {
-    private val ID = "glass_cutter"
-    private val NAME = "Glass Cutter"
+    private val ID = GlassCutter.NAME
+    private val NAME = GlassCutter.DISPLAY_NAME
     private val SHORT_DESCRIPTION = "Don't have Silk touch? Well, this is for you"
     private val LONG_DESCRIPTION = "Glasses are obtainable without using Silk touch now"
     private val ITEM: ItemLike = KItems.GLASS_CUTTER.get()
