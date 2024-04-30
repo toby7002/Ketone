@@ -5,17 +5,19 @@ import com.klikli_dev.modonomicon.api.datagen.CategoryProvider
 import com.klikli_dev.modonomicon.api.datagen.book.BookCategoryModel
 import dev.toby7002.ketone.KItems
 import dev.toby7002.ketone.datagen.book.entries.PolishedQuartzEntry
+import dev.toby7002.ketone.datagen.book.entries.TinyCharcoalEntry
+import dev.toby7002.ketone.datagen.book.entries.TinyCoalEntry
 
 class ResourcesCategory(parent: BookProvider, categoryId: String) :
     CategoryProvider(parent, categoryId) {
     override fun generateEntryMap(): Array<String> {
-        return arrayOf(
-            "m____________________",
-        )
+        return arrayOf("m____________________", "a_b__________________")
     }
 
     override fun generateEntries() {
         add(PolishedQuartzEntry(this).generate("m".first()))
+        add(TinyCoalEntry(this).generate("a".first()))
+        add(TinyCharcoalEntry(this).generate("b".first()))
     }
 
     override fun generateCategory(): BookCategoryModel {
