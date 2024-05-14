@@ -1,13 +1,14 @@
-package dev.toby7002.ketone
+package dev.toby7002.ketone.registry
 
 import com.google.common.base.Supplier
-import dev.toby7002.ketone.blocks.AngelBlock
-import dev.toby7002.ketone.items.*
+import dev.toby7002.ketone.Ketone
+import dev.toby7002.ketone.block.AngelBlock
+import dev.toby7002.ketone.item.*
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
 import net.neoforged.neoforge.registries.DeferredItem
 
-class KItems {
+class ItemRegistry {
     companion object {
         val POLISHED_QUARTZ: DeferredItem<Item> =
             Ketone.ITEMS.register(PolishedQuartz.NAME, Supplier { PolishedQuartz() })

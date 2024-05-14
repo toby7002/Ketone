@@ -1,11 +1,11 @@
-package dev.toby7002.ketone.items
+package dev.toby7002.ketone.item
 
 import com.klikli_dev.modonomicon.book.Book
 import com.klikli_dev.modonomicon.client.gui.BookGuiManager
 import com.klikli_dev.modonomicon.data.BookDataManager
 import com.klikli_dev.modonomicon.item.ModonomiconItem
-import dev.toby7002.ketone.KItems
 import dev.toby7002.ketone.Ketone
+import dev.toby7002.ketone.registry.ItemRegistry
 import net.minecraft.ChatFormatting
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
@@ -42,7 +42,7 @@ class Guidebook : ModonomiconItem(Properties()) {
 
         if (pLevel.isClientSide) {
 
-            if (itemInHand.`is`(KItems.GUIDEBOOK)) {
+            if (itemInHand.`is`(ItemRegistry.GUIDEBOOK)) {
                 val book = BookDataManager.get().getBook(BOOK)
                 BookGuiManager.get().openBook(book.id)
             } else {

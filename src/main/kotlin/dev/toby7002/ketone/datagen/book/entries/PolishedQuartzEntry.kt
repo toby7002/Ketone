@@ -5,9 +5,9 @@ import com.klikli_dev.modonomicon.api.datagen.EntryProvider
 import com.klikli_dev.modonomicon.api.datagen.book.BookIconModel
 import com.klikli_dev.modonomicon.api.datagen.book.page.BookTextPageModel
 import com.mojang.datafixers.util.Pair
-import dev.toby7002.ketone.KItems
 import dev.toby7002.ketone.datagen.book.models.CraftingPageModel
-import dev.toby7002.ketone.items.PolishedQuartz
+import dev.toby7002.ketone.item.PolishedQuartz
+import dev.toby7002.ketone.registry.ItemRegistry
 import net.minecraft.world.level.ItemLike
 
 class PolishedQuartzEntry(parent: CategoryProvider) : EntryProvider(parent) {
@@ -15,7 +15,7 @@ class PolishedQuartzEntry(parent: CategoryProvider) : EntryProvider(parent) {
     private val NAME = PolishedQuartz.DISPLAY_NAME
     private val SHORT_DESCRIPTION = "Quartz but polished"
     private val LONG_DESCRIPTION = "This is used to make tools that involve sharpness"
-    private val ITEM: ItemLike = KItems.POLISHED_QUARTZ.get()
+    private val ITEM: ItemLike = ItemRegistry.POLISHED_QUARTZ.get()
 
     override fun generatePages() {
         context().page("intro")

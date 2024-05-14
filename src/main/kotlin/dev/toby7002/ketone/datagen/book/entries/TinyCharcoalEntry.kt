@@ -5,9 +5,9 @@ import com.klikli_dev.modonomicon.api.datagen.EntryProvider
 import com.klikli_dev.modonomicon.api.datagen.book.BookIconModel
 import com.klikli_dev.modonomicon.api.datagen.book.page.BookTextPageModel
 import com.mojang.datafixers.util.Pair
-import dev.toby7002.ketone.KItems
 import dev.toby7002.ketone.datagen.book.models.CraftingPageModel
-import dev.toby7002.ketone.items.TinyCharcoal
+import dev.toby7002.ketone.item.TinyCharcoal
+import dev.toby7002.ketone.registry.ItemRegistry
 import net.minecraft.world.level.ItemLike
 
 class TinyCharcoalEntry(parent: CategoryProvider) : EntryProvider(parent) {
@@ -15,7 +15,7 @@ class TinyCharcoalEntry(parent: CategoryProvider) : EntryProvider(parent) {
     private val NAME = TinyCharcoal.DISPLAY_NAME
     private val SHORT_DESCRIPTION = "Small coal"
     private val LONG_DESCRIPTION = "Provides just single operation in furnaces"
-    private val ITEM: ItemLike = KItems.TINY_COAL
+    private val ITEM: ItemLike = ItemRegistry.TINY_COAL
 
     override fun generatePages() {
         context().page("intro")

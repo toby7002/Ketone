@@ -3,10 +3,10 @@ package dev.toby7002.ketone.datagen.book.categories
 import com.klikli_dev.modonomicon.api.datagen.BookProvider
 import com.klikli_dev.modonomicon.api.datagen.CategoryProvider
 import com.klikli_dev.modonomicon.api.datagen.book.BookCategoryModel
-import dev.toby7002.ketone.KItems
 import dev.toby7002.ketone.datagen.book.entries.PolishedQuartzEntry
 import dev.toby7002.ketone.datagen.book.entries.TinyCharcoalEntry
 import dev.toby7002.ketone.datagen.book.entries.TinyCoalEntry
+import dev.toby7002.ketone.registry.ItemRegistry
 
 class ResourcesCategory(parent: BookProvider, categoryId: String) :
     CategoryProvider(parent, categoryId) {
@@ -24,7 +24,7 @@ class ResourcesCategory(parent: BookProvider, categoryId: String) :
         lang().add(context().categoryName(), "Resources")
 
         return BookCategoryModel.create(modLoc(context().categoryId()), context().categoryName())
-            .withIcon(KItems.POLISHED_QUARTZ.asItem())
+            .withIcon(ItemRegistry.POLISHED_QUARTZ.asItem())
             .withSortNumber(1)
     }
 }

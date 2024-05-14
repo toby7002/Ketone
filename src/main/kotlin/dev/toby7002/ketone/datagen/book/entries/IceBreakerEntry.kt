@@ -5,9 +5,9 @@ import com.klikli_dev.modonomicon.api.datagen.EntryProvider
 import com.klikli_dev.modonomicon.api.datagen.book.BookIconModel
 import com.klikli_dev.modonomicon.api.datagen.book.page.BookTextPageModel
 import com.mojang.datafixers.util.Pair
-import dev.toby7002.ketone.KItems
 import dev.toby7002.ketone.datagen.book.models.CraftingPageModel
-import dev.toby7002.ketone.items.IceBreaker
+import dev.toby7002.ketone.item.IceBreaker
+import dev.toby7002.ketone.registry.ItemRegistry
 import net.minecraft.world.level.ItemLike
 
 class IceBreakerEntry(parent: CategoryProvider) : EntryProvider(parent) {
@@ -15,7 +15,7 @@ class IceBreakerEntry(parent: CategoryProvider) : EntryProvider(parent) {
     private val NAME = IceBreaker.DISPLAY_NAME
     private val SHORT_DESCRIPTION = "Quartz but polished"
     private val LONG_DESCRIPTION = "This is used to make tools that involve sharpness"
-    private val ITEM: ItemLike = KItems.ICE_BREAKER.get()
+    private val ITEM: ItemLike = ItemRegistry.ICE_BREAKER.get()
 
     override fun generatePages() {
         context().page("intro")

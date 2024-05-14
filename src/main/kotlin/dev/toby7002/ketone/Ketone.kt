@@ -2,6 +2,8 @@ package dev.toby7002.ketone
 
 import com.mojang.logging.LogUtils
 import dev.toby7002.ketone.datagen.DataGen
+import dev.toby7002.ketone.registry.BlockRegistry
+import dev.toby7002.ketone.registry.ItemRegistry
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.chat.Component
 import net.minecraft.world.item.CreativeModeTab
@@ -31,7 +33,7 @@ class Ketone(modEventBus: IEventBus) {
                 CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.$MOD_ID"))
                     .withTabsBefore(CreativeModeTabs.COMBAT)
-                    .icon { KItems.GLASS_CUTTER.get().defaultInstance }
+                    .icon { ItemRegistry.GLASS_CUTTER.get().defaultInstance }
                     .displayItems { _: ItemDisplayParameters, output: CreativeModeTab.Output ->
                         ITEMS.entries.map { it.get() }.forEach(output::accept)
                         BLOCKS.entries.map { it.get() }.forEach(output::accept)
@@ -47,8 +49,8 @@ class Ketone(modEventBus: IEventBus) {
         ITEMS.register(modEventBus)
         CREATIVE_MODE_TABS.register(modEventBus)
         BLOCK_ENTITIES.register(modEventBus)
-        KItems.init()
-        KBlocks.init()
+        ItemRegistry.init()
+        BlockRegistry.init()
     }
 
     private fun commonSetup(event: FMLCommonSetupEvent) {

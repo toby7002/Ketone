@@ -3,8 +3,8 @@ package dev.toby7002.ketone.datagen.book.categories
 import com.klikli_dev.modonomicon.api.datagen.BookProvider
 import com.klikli_dev.modonomicon.api.datagen.CategoryProvider
 import com.klikli_dev.modonomicon.api.datagen.book.BookCategoryModel
-import dev.toby7002.ketone.KBlocks
 import dev.toby7002.ketone.datagen.book.entries.AngelBlockEntry
+import dev.toby7002.ketone.registry.BlockRegistry
 
 class BlocksCategory(parent: BookProvider, categoryId: String) :
     CategoryProvider(parent, categoryId) {
@@ -22,7 +22,7 @@ class BlocksCategory(parent: BookProvider, categoryId: String) :
         lang().add(context().categoryName(), "Blocks")
 
         return BookCategoryModel.create(modLoc(context().categoryId()), context().categoryName())
-            .withIcon(KBlocks.ANGEL_BLOCK.asItem())
+            .withIcon(BlockRegistry.ANGEL_BLOCK.asItem())
             .withSortNumber(3)
     }
 }

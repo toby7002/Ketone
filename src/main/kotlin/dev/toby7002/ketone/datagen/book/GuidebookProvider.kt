@@ -7,7 +7,7 @@ import dev.toby7002.ketone.Ketone
 import dev.toby7002.ketone.datagen.book.categories.BlocksCategory
 import dev.toby7002.ketone.datagen.book.categories.ResourcesCategory
 import dev.toby7002.ketone.datagen.book.categories.ToolsCategory
-import dev.toby7002.ketone.items.Guidebook
+import dev.toby7002.ketone.item.Guidebook
 import net.minecraft.data.PackOutput
 import net.minecraft.resources.ResourceLocation
 

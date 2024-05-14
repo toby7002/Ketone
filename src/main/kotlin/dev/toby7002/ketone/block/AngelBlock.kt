@@ -1,4 +1,4 @@
-package dev.toby7002.ketone.blocks
+package dev.toby7002.ketone.block
 
 import net.minecraft.core.BlockPos
 import net.minecraft.world.entity.player.Player

@@ -5,9 +5,9 @@ import com.klikli_dev.modonomicon.api.datagen.EntryProvider
 import com.klikli_dev.modonomicon.api.datagen.book.BookIconModel
 import com.klikli_dev.modonomicon.api.datagen.book.page.BookTextPageModel
 import com.mojang.datafixers.util.Pair
-import dev.toby7002.ketone.KItems
 import dev.toby7002.ketone.datagen.book.models.CraftingPageModel
-import dev.toby7002.ketone.items.GlassCutter
+import dev.toby7002.ketone.item.GlassCutter
+import dev.toby7002.ketone.registry.ItemRegistry
 import net.minecraft.world.level.ItemLike
 
 class GlassCutterEntry(parent: CategoryProvider) : EntryProvider(parent) {
@@ -15,7 +15,7 @@ class GlassCutterEntry(parent: CategoryProvider) : EntryProvider(parent) {
     private val NAME = GlassCutter.DISPLAY_NAME
     private val SHORT_DESCRIPTION = "Don't have Silk touch? Well, this is for you"
     private val LONG_DESCRIPTION = "Glasses are obtainable without using Silk touch now"
-    private val ITEM: ItemLike = KItems.GLASS_CUTTER.get()
+    private val ITEM: ItemLike = ItemRegistry.GLASS_CUTTER.get()
 
     override fun generatePages() {
         context().page("intro")

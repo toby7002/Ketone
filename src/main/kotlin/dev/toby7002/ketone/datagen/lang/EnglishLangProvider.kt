@@ -1,10 +1,11 @@
 package dev.toby7002.ketone.datagen.lang
 
-import dev.toby7002.ketone.KBlocks
-import dev.toby7002.ketone.KItems
 import dev.toby7002.ketone.Ketone
-import dev.toby7002.ketone.blocks.AngelBlock
-import dev.toby7002.ketone.items.*
+import dev.toby7002.ketone.block.AngelBlock
+import dev.toby7002.ketone.block.RainMaker
+import dev.toby7002.ketone.item.*
+import dev.toby7002.ketone.registry.BlockRegistry
+import dev.toby7002.ketone.registry.ItemRegistry
 import net.minecraft.data.PackOutput
 import net.minecraft.world.item.Item
 import net.neoforged.neoforge.common.data.LanguageProvider
@@ -14,12 +15,13 @@ class EnglishLangProvider(output: PackOutput) : LanguageProvider(output, Ketone.
         add("itemGroup.ketone", "Ketone")
         val map = HashMap<String, Item>()
 
-        map[GlassCutter.DISPLAY_NAME] = KItems.GLASS_CUTTER.get()
-        map[IceBreaker.DISPLAY_NAME] = KItems.ICE_BREAKER.get()
-        map[PolishedQuartz.DISPLAY_NAME] = KItems.POLISHED_QUARTZ.get()
-        map[AngelBlock.DISPLAY_NAME] = KBlocks.ANGEL_BLOCK.asItem()
-        map[TinyCoal.DISPLAY_NAME] = KItems.TINY_COAL.get()
-        map[TinyCharcoal.DISPLAY_NAME] = KItems.TINY_CHARCOAL.get()
+        map[GlassCutter.DISPLAY_NAME] = ItemRegistry.GLASS_CUTTER.get()
+        map[IceBreaker.DISPLAY_NAME] = ItemRegistry.ICE_BREAKER.get()
+        map[PolishedQuartz.DISPLAY_NAME] = ItemRegistry.POLISHED_QUARTZ.get()
+        map[AngelBlock.DISPLAY_NAME] = BlockRegistry.ANGEL_BLOCK.asItem()
+        map[TinyCoal.DISPLAY_NAME] = ItemRegistry.TINY_COAL.get()
+        map[TinyCharcoal.DISPLAY_NAME] = ItemRegistry.TINY_CHARCOAL.get()
+        map[RainMaker.DISPLAY_NAME] = BlockRegistry.RAIN_MAKER.asItem()
 
         map.forEach { (key, value) -> add(value, key) }
     }

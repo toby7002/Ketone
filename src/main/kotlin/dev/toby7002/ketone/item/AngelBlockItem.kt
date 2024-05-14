@@ -1,6 +1,6 @@
-package dev.toby7002.ketone.items
+package dev.toby7002.ketone.item
 
-import dev.toby7002.ketone.KBlocks
+import dev.toby7002.ketone.registry.BlockRegistry
 import net.minecraft.core.BlockPos
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
@@ -10,7 +10,7 @@ import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 
-class AngelBlockItem : BlockItem(KBlocks.ANGEL_BLOCK.get(), Properties()) {
+class AngelBlockItem : BlockItem(BlockRegistry.ANGEL_BLOCK.get(), Properties()) {
 
     override fun use(
         level: Level,
@@ -20,7 +20,7 @@ class AngelBlockItem : BlockItem(KBlocks.ANGEL_BLOCK.get(), Properties()) {
         val pos = BlockPos(player.x.toInt(), (player.y - 1).toInt(), player.z.toInt())
 
         if (level.getBlockState(pos).`is`(net.minecraft.world.level.block.Blocks.AIR)) {
-            level.setBlock(pos, KBlocks.ANGEL_BLOCK.get().defaultBlockState(), 3)
+            level.setBlock(pos, BlockRegistry.ANGEL_BLOCK.get().defaultBlockState(), 3)
             if (!player.isCreative) {
                 player.mainHandItem.shrink(1)
             }

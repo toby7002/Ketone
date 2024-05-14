@@ -5,9 +5,9 @@ import com.klikli_dev.modonomicon.api.datagen.EntryProvider
 import com.klikli_dev.modonomicon.api.datagen.book.BookIconModel
 import com.klikli_dev.modonomicon.api.datagen.book.page.BookTextPageModel
 import com.mojang.datafixers.util.Pair
-import dev.toby7002.ketone.KBlocks
-import dev.toby7002.ketone.blocks.AngelBlock
+import dev.toby7002.ketone.block.AngelBlock
 import dev.toby7002.ketone.datagen.book.models.CraftingPageModel
+import dev.toby7002.ketone.registry.BlockRegistry
 import net.minecraft.world.level.ItemLike
 
 class AngelBlockEntry(parent: CategoryProvider) : EntryProvider(parent) {
@@ -15,7 +15,7 @@ class AngelBlockEntry(parent: CategoryProvider) : EntryProvider(parent) {
     private val NAME = AngelBlock.DISPLAY_NAME
     private val SHORT_DESCRIPTION = "This block can be place in the air"
     private val LONG_DESCRIPTION = "This block can be place in the air"
-    private val ITEM: ItemLike = KBlocks.ANGEL_BLOCK.get()
+    private val ITEM: ItemLike = BlockRegistry.ANGEL_BLOCK.get()
 
     override fun generatePages() {
         context().page("intro")

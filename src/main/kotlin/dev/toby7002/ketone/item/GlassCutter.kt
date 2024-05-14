@@ -1,4 +1,4 @@
-package dev.toby7002.ketone.items
+package dev.toby7002.ketone.item
 
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.item.ItemEntity

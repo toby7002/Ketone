@@ -1,7 +1,7 @@
 package dev.toby7002.ketone.datagen.recipes
 
-import dev.toby7002.ketone.KBlocks
-import dev.toby7002.ketone.KItems
+import dev.toby7002.ketone.registry.BlockRegistry
+import dev.toby7002.ketone.registry.ItemRegistry
 import net.minecraft.data.PackOutput
 import net.minecraft.data.recipes.*
 import net.minecraft.world.item.Items
@@ -9,39 +9,39 @@ import net.minecraft.world.level.block.Blocks
 
 class RecipesProvider(output: PackOutput) : RecipeProvider(output) {
     override fun buildRecipes(p0: RecipeOutput) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, KItems.POLISHED_QUARTZ)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ItemRegistry.POLISHED_QUARTZ)
             .requires(Items.QUARTZ, 1)
             .requires(Items.FLINT, 1)
             .unlockedBy("has_item", has(Items.FLINT))
             .save(p0)
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, KItems.GUIDEBOOK)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ItemRegistry.GUIDEBOOK)
             .requires(Items.BOOK, 1)
             .requires(Items.QUARTZ, 1)
             .unlockedBy("has_item", has(Items.QUARTZ))
             .save(p0)
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, KItems.TINY_COAL, 8)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ItemRegistry.TINY_COAL, 8)
             .requires(Items.COAL, 1)
             .unlockedBy("has_item", has(Items.COAL))
             .save(p0)
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, KItems.TINY_CHARCOAL, 8)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ItemRegistry.TINY_CHARCOAL, 8)
             .requires(Items.CHARCOAL, 1)
             .unlockedBy("has_item", has(Items.CHARCOAL))
             .save(p0)
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, KItems.GLASS_CUTTER, 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegistry.GLASS_CUTTER, 1)
             .pattern("x")
             .pattern("y")
-            .define("x".single(), KItems.POLISHED_QUARTZ.get())
+            .define("x".single(), ItemRegistry.POLISHED_QUARTZ.get())
             .define("y".single(), Items.STICK)
-            .unlockedBy("has_item", has(KItems.POLISHED_QUARTZ.get()))
+            .unlockedBy("has_item", has(ItemRegistry.POLISHED_QUARTZ.get()))
             .save(p0)
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, KItems.ICE_BREAKER, 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ItemRegistry.ICE_BREAKER, 1)
             .pattern("x")
             .pattern("y")
-            .define("x".single(), KItems.POLISHED_QUARTZ.get())
+            .define("x".single(), ItemRegistry.POLISHED_QUARTZ.get())
             .define("y".single(), Items.TORCH)
-            .unlockedBy("has_item", has(KItems.POLISHED_QUARTZ.get()))
+            .unlockedBy("has_item", has(ItemRegistry.POLISHED_QUARTZ.get()))
             .save(p0)
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, KBlocks.ANGEL_BLOCK, 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlockRegistry.ANGEL_BLOCK, 1)
             .pattern(" y ")
             .pattern("aza")
             .pattern(" y ")
@@ -54,15 +54,23 @@ class RecipesProvider(output: PackOutput) : RecipeProvider(output) {
             .pattern("xxx")
             .pattern("x x")
             .pattern("xxx")
-            .define("x".single(), KItems.TINY_COAL)
+            .define("x".single(), ItemRegistry.TINY_COAL)
             .unlockedBy("has_item", has(Items.COAL))
             .save(p0)
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.CHARCOAL, 1)
             .pattern("xxx")
             .pattern("x x")
             .pattern("xxx")
-            .define("x".single(), KItems.TINY_CHARCOAL)
+            .define("x".single(), ItemRegistry.TINY_CHARCOAL)
             .unlockedBy("has_item", has(Items.CHARCOAL))
+            .save(p0)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlockRegistry.RAIN_MAKER, 1)
+            .pattern("xxx")
+            .pattern("xyx")
+            .pattern("xxx")
+            .define("x".single(), Items.IRON_INGOT)
+            .define("y".single(), Items.WATER_BUCKET)
+            .unlockedBy("has_item", has(Items.WATER_BUCKET))
             .save(p0)
     }
 }

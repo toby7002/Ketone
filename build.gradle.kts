@@ -22,11 +22,8 @@ project.group = mod_group_id
 
 repositories {
     mavenLocal()
-    maven {
-        name = "Kotlin for Forge"
-        setUrl("https://thedarkcolour.github.io/KotlinForForge/")
-    }
-    maven { setUrl("https://maven.shedaniel.me") }
+    maven { setUrl("https://thedarkcolour.github.io/KotlinForForge/") }
+    maven { setUrl("https://maven.blamejared.com/") }
     maven {
         setUrl("https://dl.cloudsmith.io/public/klikli-dev/mods/maven/")
         content { includeGroup("com.klikli_dev") }
@@ -88,7 +85,7 @@ sourceSets { main { resources.srcDir("src/generated/resources") } }
 dependencies {
     val neo_version: String by project
     val kff_version: String by project
-    val rei_version: String by project
+    val jei_version: String by project
     val jade_version: String by project
     val modonomicon_version: String by project
 
@@ -100,7 +97,7 @@ dependencies {
         isTransitive = false
     }
 
-    runtimeOnly("me.shedaniel:RoughlyEnoughItems-neoforge:$rei_version")
+    runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
     runtimeOnly("maven.modrinth:nvQzSEkH:$jade_version")
 }
 
