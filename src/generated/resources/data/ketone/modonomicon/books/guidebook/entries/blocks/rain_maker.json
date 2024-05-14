@@ -2,12 +2,12 @@
   "background_u_index": 0,
   "background_v_index": 0,
   "category": "ketone:blocks",
-  "description": "book.ketone.guidebook.blocks.angel_block.description",
+  "description": "book.ketone.guidebook.blocks.rain_maker.description",
   "hide_while_locked": false,
   "icon": {
-    "item": "ketone:angel_block"
+    "item": "ketone:rain_maker"
   },
-  "name": "book.ketone.guidebook.blocks.angel_block.name",
+  "name": "book.ketone.guidebook.blocks.rain_maker.name",
   "pages": [
     {
       "type": "modonomicon:text",
@@ -16,8 +16,8 @@
         "type": "modonomicon:none"
       },
       "show_title_separator": true,
-      "text": "book.ketone.guidebook.blocks.angel_block.intro.text",
-      "title": "book.ketone.guidebook.blocks.angel_block.intro.title",
+      "text": "book.ketone.guidebook.blocks.rain_maker.intro.text",
+      "title": "book.ketone.guidebook.blocks.rain_maker.intro.title",
       "use_markdown_in_title": false
     },
     {
@@ -26,13 +26,13 @@
       "condition": {
         "type": "modonomicon:none"
       },
-      "recipe_id_1": "ketone:angel_block",
+      "recipe_id_1": "ketone:rain_maker",
       "text": "",
-      "title1": "book.ketone.guidebook.blocks.angel_block.recipe.title",
+      "title1": "book.ketone.guidebook.blocks.rain_maker.recipe.title",
       "title2": ""
     }
   ],
   "show_when_any_parent_unlocked": false,
   "x": -10,
-  "y": -1
+  "y": 0
 }
