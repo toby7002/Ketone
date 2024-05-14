@@ -41,6 +41,10 @@ repositories {
 
 base { archivesName.set("$mod_id-neoforge-$minecraft_version") }
 
+kotlin {
+    jvmToolchain(17)
+}
+
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 
 // minecraft.accessTransformers.file
