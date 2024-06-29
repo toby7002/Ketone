@@ -9,7 +9,7 @@
     A mod that adds useful things
     <br />
 
-[![Discord](https://img.shields.io/static/v1?label=&message=Discord&color=f8f8f2&labelColor=90FFA7&style=for-the-badge&logo=discord&logoColor=white)](./)
+[![Discord](https://img.shields.io/static/v1?label=&message=Discord&color=f8f8f2&labelColor=90FFA7&style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/qn59F2g53F)
 [![GitHub](https://img.shields.io/static/v1?label=&message=GitHub&color=f8f8f2&labelColor=90FFA7&style=for-the-badge&logo=github&logoColor=white)](https://github.com/toby7002/Ketone)
 
   </p>
