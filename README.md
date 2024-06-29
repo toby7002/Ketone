@@ -1,20 +1,15 @@
 <div align="center">
-  <a href="https://github.com/toby7002/Ketone">
-    <img src="./assets/logo_square.png" alt="Logo" width="120" height="120">
-  </a>
-
-<h3 align="center">Ketone</h3>
-
-  <p align="center">
-    A mod that adds useful things
-    <br />
-
-[![Discord](https://img.shields.io/static/v1?label=&message=Discord&color=f8f8f2&labelColor=90FFA7&style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/qn59F2g53F)
-[![GitHub](https://img.shields.io/static/v1?label=&message=GitHub&color=f8f8f2&labelColor=90FFA7&style=for-the-badge&logo=github&logoColor=white)](https://github.com/toby7002/Ketone)
-
-  </p>
+    <img src="./assets/logo.png" alt="logo" />
 </div>
 
-## License
+<p align="center">
+    <a href="https://discord.gg/qn59F2g53F"><img alt="Discord" src="https://img.shields.io/discord/1255068649992224819?style=for-the-badge&logo=discord&logoColor=ffffff&label=Discord&labelColor=90FFA7&color=ffffff"></a>
+    <a href="https://github.com/toby7002/Ketone/blob/main/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/toby7002/Ketone?style=for-the-badge&label=License&labelColor=90FFA7&color=ffffff"></a>
+</p>
 
+## What is Ketone?
+
+Ketone is a mod that adds useful blocks, items, tools, potions, etc. to improve your game experience.
+
+## License
 Licensed under the [MIT](https://github.com/toby7002/Ketone/blob/main/LICENSE) license.
